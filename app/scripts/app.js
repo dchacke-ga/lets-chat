@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-app = angular.module('gaChatApp', [
+var app = angular.module('gaChatApp', [
   'ngAnimate',
   'ngCookies',
   'ngResource',
@@ -21,16 +21,26 @@ app = angular.module('gaChatApp', [
 app.constant('FIREBASE_URL', 'https://ga-chat.firebaseio.com/');
 
 app.config(function ($routeProvider) {
-  // $routeProvider
-    // .when('/', {
-    //   templateUrl: 'views/main.html',
-    //   controller: 'MainCtrl'
-    // })
-    // .when('/about', {
-    //   templateUrl: 'views/about.html',
-    //   controller: 'AboutCtrl'
-    // })
-    // .otherwise({
-    //   redirectTo: '/'
-    // });
+  $routeProvider
+    .when('/users/new', {
+      templateUrl: 'views/users/new.html',
+      controller: 'AuthCtrl',
+      resolve: {
+        user: function(Auth) {
+          return Auth.resolveUser();
+        }
+      }
+    })
+    .when('/sessions/new', {
+      templateUrl: 'views/sessions/new.html',
+      controller: 'AuthCtrl',
+      resolve: {
+        user: function(Auth) {
+          return Auth.resolveUser();
+        }
+      }
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
 });
