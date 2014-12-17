@@ -30,8 +30,14 @@ app.factory('Auth', function($firebase, $firebaseAuth, FIREBASE_URL) {
 		if (authData) {
 			console.log('Logged in');
 			angular.copy(authData, Auth.user);
+			Auth.user.profile = $firebase(ref.child('profiles').child(Auth.user.uid)).$asObject();
 		} else {
 			console.log('Logged out');
+
+			if (Auth.user && Auth.user.profile) {
+				Auth.user.profile.$destroy();
+			}
+
 			angular.copy({}, Auth.user);
 		}
 	});
