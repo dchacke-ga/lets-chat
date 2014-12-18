@@ -17,9 +17,8 @@ app.controller('RoomsCtrl', function($scope, $location, $routeParams, Auth, Room
 		$scope.sendMessage = function() {
 			console.log('Sending message');
 			$scope.message.sender = Auth.user.profile.username;
-			Message.create(id, $scope.message).then(function() {
-				$scope.message.body = '';
-			});
+			Message.create(id, $scope.message);
+			$scope.message.body = '';
 		};
 	}
 
