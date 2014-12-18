@@ -1,0 +1,9 @@
+{
+  "firebase": "ga-chat",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
