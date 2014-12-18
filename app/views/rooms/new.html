@@ -1,0 +1,11 @@
+<div class="form">
+
+  <h2>New room</h2>
+
+  <form ng-submit="create()">
+    <p ng-show="error" class="text-danger">{{ error }}</p>
+    <input type="text" ng-model="room.name" placeholder="Name" class="form-control" autofocus="true"><br>
+    <input type="submit" value="Create room" class="btn btn-primary" />
+  </form>
+
+</div>

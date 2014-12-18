@@ -40,6 +40,33 @@ app.config(function ($routeProvider) {
         }
       }
     })
+    .when('/rooms', {
+      templateUrl: 'views/rooms/index.html',
+      controller: 'RoomsCtrl',
+      resolve: {
+        user: function(Auth) {
+          return Auth.resolveUser();
+        }
+      }
+    })
+    .when('/rooms/new', {
+      templateUrl: 'views/rooms/new.html',
+      controller: 'RoomsCtrl',
+      resolve: {
+        user: function(Auth) {
+          return Auth.resolveUser();
+        }
+      }
+    })
+    .when('/rooms/:id', {
+      templateUrl: 'views/rooms/show.html',
+      controller: 'RoomsCtrl',
+      resolve: {
+        user: function(Auth) {
+          return Auth.resolveUser();
+        }
+      }
+    })
     .otherwise({
       redirectTo: '/'
     });

@@ -2,7 +2,6 @@ body {
   background: #F3F3F3;
 }
 
-
 /* NAV BAR */
 .nav-pic {
   margin: -2px 5px 0 0;
@@ -12,7 +11,7 @@ body {
   border-radius: 100px;
 }
 
-.auth-forms {
+.form {
   max-width:400px;
   margin:0 auto;
   background: #fff;
@@ -23,19 +22,4 @@ body {
     -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-}
-
-.cmt-form {
-  margin-top:30px;
-}
-
-.cmt {
-  margin-top:10px;
-  padding-top:10px;
-  border-top:1px solid #ccc;
-}
-
-.cmt .author {
-  font-size:11px;
-  color:#bbb;
 }

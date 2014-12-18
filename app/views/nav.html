@@ -20,6 +20,12 @@
         <a href="#/sessions/new">Log in</a>
       </li>
       <li ng-show="signedIn()">
+        <a href="#/rooms">Rooms</a>
+      </li>
+      <li ng-show="signedIn()">
+        <a href="#/rooms/new">Create new room</a>
+      </li>
+      <li ng-show="signedIn()">
         <a ng-click="logout()" href="">Log out</a>
       </li>
       <!-- <li ng-show="signedIn()">
