@@ -2,9 +2,15 @@
   <div class="panel-heading">
     <h3 class="panel-title">{{ room.name }}</h3>
   </div>
-  <div class="panel-body">
-    Panel content
+  <div class="panel-body" ng-hide="messages.length">
+  	You're the first one to send a message!
   </div>
+  <ul class="list-group">
+  	<li ng-repeat="message in messages" class="list-group-item">
+  		<strong>{{ message.sender }}</strong>
+  		{{ message.body }}
+  	</li>
+  </ul>
   <div class="panel-footer">
   	<form role="form" ng-submit="sendMessage()">
   		<input ng-model="message.body" class="form-control" autofocus="true"><br>
