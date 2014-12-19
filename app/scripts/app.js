@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app = angular.module('gaChatApp', [
+var app = angular.module('letsChatApp', [
   'ngAnimate',
   'ngCookies',
   'ngResource',
@@ -18,7 +18,7 @@ var app = angular.module('gaChatApp', [
   'firebase'
 ]);
 
-app.constant('FIREBASE_URL', 'https://ga-chat.firebaseio.com/');
+app.constant('FIREBASE_URL', 'https://lets-chat.firebaseio.com/');
 
 app.config(function ($routeProvider) {
   $routeProvider
