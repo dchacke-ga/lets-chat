@@ -13,6 +13,7 @@ app.controller('RoomsCtrl', function($scope, $location, $routeParams, Auth, Room
 		var id = $routeParams.id;
 		$scope.room = Room.get(id);
 		$scope.messages = Message.all(id);
+		$scope.url = $location.absUrl();
 
 		$scope.sendMessage = function() {
 			console.log('Sending message');

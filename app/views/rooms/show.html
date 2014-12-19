@@ -1,6 +1,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">{{ room.name }}</h3>
+    <small>Share this url with anyone you want to join! {{ url }}</small>
   </div>
   <div class="panel-body" ng-hide="messages.length">
   	You're the first one to send a message!
@@ -13,8 +14,8 @@
   </ul>
   <div class="panel-footer">
   	<form role="form" ng-submit="sendMessage()">
-  		<input ng-model="message.body" class="form-control" autofocus="true"><br>
-  		<input type="submit" class="btn btn-primary">
+  		<input id="messageBody" ng-model="message.body" class="form-control" autofocus="true"><br>
+  		<input id="postSubmit" type="submit">
   	</form>
   </div>
 </div>

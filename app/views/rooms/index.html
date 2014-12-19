@@ -1,3 +1,16 @@
-<div class="list-group">
-	<a ng-href="#/rooms/{{ room.$id }}" ng-repeat="room in rooms" class="list-group-item">{{ room.name }}</a>
+<div class="jumbotron" ng-hide="rooms.length">
+	<h1>Oh no! There are no rooms.</h1>
+	<p>Go ahead and create one to start chatting!</p>
+	<p><a href="#/rooms/new" role="button" class="btn btn-primary btn-large">Create room</a></p>
+</div>
+
+<div ng-show="rooms.length">
+	<div class="jumbotron">
+		<h1>Welcome!</h1>
+		<p>Join one of the rooms below or create a new one to start chatting.</p>
+		<div class="list-group">
+			<a ng-href="#/rooms/{{ room.$id }}" ng-repeat="room in rooms" class="list-group-item">{{ room.name }}</a>
+		</div>
+		<p><a href="#/rooms/new" role="button" class="btn btn-primary btn-large">Create room</a></p>
+	</div>
 </div>

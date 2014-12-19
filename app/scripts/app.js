@@ -22,6 +22,9 @@ app.constant('FIREBASE_URL', 'https://ga-chat.firebaseio.com/');
 
 app.config(function ($routeProvider) {
   $routeProvider
+    .when('/', {
+      redirectTo: '/rooms'
+    })
     .when('/users/new', {
       templateUrl: 'views/users/new.html',
       controller: 'AuthCtrl',

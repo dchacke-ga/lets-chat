@@ -3,7 +3,7 @@
 app.factory('Message', function($firebase, FIREBASE_URL) {
 	var ref = new Firebase(FIREBASE_URL);
 	var messages = function(roomId) {
-		return $firebase(ref.child('messages').child(roomId)).$asArray()
+		return $firebase(ref.child('messages').child(roomId)).$asArray();
 	};
 
 	var Message = {
